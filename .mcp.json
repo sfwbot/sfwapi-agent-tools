@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sfwapi": {
+      "type": "http",
+      "url": "https://api.sfwapi.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SFWAPI_API_KEY}"
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "name": "sfwapi",
-  "description": "SFW API nudity detection: a skill that knows when to use the API, where the docs are and how to integrate it safely.",
-  "version": "0.1.0",
+  "description": "SFW API nudity detection: a skill that knows when to use the API and how to integrate it safely, plus the MCP server with analyze_url for checking media from the agent.",
+  "version": "0.2.0",
   "author": { "name": "SFW API", "url": "https://sfwapi.dev" },
   "homepage": "https://sfwapi.dev/docs/ai-agents",
   "repository": "https://github.com/sfwbot/sfwapi-agent-tools",
   "license": "MIT",
-  "keywords": ["nudity-detection", "nsfw", "content-moderation", "image-moderation", "sfwapi"]
+  "keywords": ["nudity-detection", "nsfw", "content-moderation", "image-moderation", "mcp", "sfwapi"]
 }

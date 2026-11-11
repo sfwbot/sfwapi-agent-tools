@@ -15,6 +15,23 @@ Inside a session: `/plugin marketplace add sfwbot/sfwapi-agent-tools` then
 for nudity detection, an NSFW filter or upload moderation. Third-party marketplaces do not auto-update by
 default; turn it on under `/plugin` if you want new versions.
 
+The plugin also connects the SFW API MCP server (`https://api.sfwapi.dev/mcp`), so Claude can check media
+itself with the tools `analyze_url` and `get_account`. It reads your key from the environment variable
+`SFWAPI_API_KEY`; set it before you start Claude Code. Without the key the skill still works and only the
+MCP server stays disconnected.
+
+## MCP server without the plugin
+
+```bash
+# hosted, nothing to install
+claude mcp add --transport http sfwapi https://api.sfwapi.dev/mcp --header "Authorization: Bearer $SFWAPI_API_KEY"
+# local, adds analyze_file for files on your machine
+claude mcp add sfwapi -e SFWAPI_API_KEY=$SFWAPI_API_KEY -- npx -y @sfwapi/mcp
+```
+
+Setup for Cursor, VS Code, Codex and Claude Desktop: https://sfwapi.dev/mcp. Tool reference:
+https://sfwapi.dev/docs/mcp.
+
 ## Codex
 
 Copy the `## Image moderation` block from [`AGENTS.md`](AGENTS.md) into your repository's `AGENTS.md`.
@@ -48,6 +65,7 @@ Paste this prompt into your agent:
 ```
 .claude-plugin/plugin.json       plugin manifest
 .claude-plugin/marketplace.json  marketplace manifest (the plugin lives at the repo root)
+.mcp.json                        MCP server the plugin connects (hosted endpoint)
 skills/sfwapi/SKILL.md           the skill
 skills/sfwapi/reference.md       offline API reference, generated
 AGENTS.md                        Codex / Cursor recipe, generated
