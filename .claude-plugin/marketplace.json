@@ -1,0 +1,18 @@
+{
+  "name": "sfwapi-agent-tools",
+  "owner": { "name": "SFW API", "url": "https://sfwapi.dev" },
+  "metadata": {
+    "description": "Coding-agent tools for the SFW API nudity-detection service.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "sfwapi",
+      "source": "./",
+      "description": "Skill for integrating the SFW API: levels, policy, SDKs, error handling and privacy rules.",
+      "version": "0.1.0",
+      "category": "development",
+      "keywords": ["nudity-detection", "nsfw", "content-moderation", "image-moderation"]
+    }
+  ]
+}
